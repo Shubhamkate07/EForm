@@ -128,12 +128,15 @@ app.use(cors()); // Enable CORS
 app.use(bodyParser.json()); // Parse JSON data
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://ashankaidevify:idevify%40gmail.com@cluster0.ijmsuse.mongodb.net/DK")
+mongoose.connect("mongodb://localhost:27017/DezyKode")
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.error("MongoDB connection error:", err));
 
 // API endpoint to submit data
 app.post('/api/submit', async(req, res) => {
+
+  
+
     try {
         // Define a new user object
         const userData = {
@@ -147,7 +150,7 @@ app.post('/api/submit', async(req, res) => {
             contact: req.body.contact,
             gender: req.body.gender,
             address: req.body.address,
-            State: req.body.state,
+            state: req.body.state,
             city: req.body.city,
             postalCode: req.body.postalCode,
             Education: req.body.Education,

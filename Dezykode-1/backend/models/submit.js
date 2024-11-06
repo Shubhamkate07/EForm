@@ -25,12 +25,12 @@ const userSchema = new mongoose.Schema({
     contact: String,
     gender: String,
     address: String,
-    state: { type: String, required: true }, // Ensure this is defined and required
-    city: { type: String, required: true },
-    postalCode: { type: String, required: true },
-    education: { type: String, required: true },
+    state: { type: String, required:true }, // Ensure this is defined and required
+    city: { type: String },
+    postalCode: { type: String },
+    education: { type: String},
     educationStatus: String,
-    listenedDate: Date
+    listenedDate: String
 });
 
 module.exports = mongoose.model('User', userSchema);
